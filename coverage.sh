@@ -10,8 +10,15 @@ done
 find . -type f -name "*.gcov" > lstcov
 
 echo "listing uncovered functions"
-for i in `cat lstcov`; do
-   egrep -e "function .* called 0" $i  >> tmpcoverage_${i#./}  #parameter expansion
-done
+while read i ; do
+   echo "in file " $i
+   zerocoveragename=tmpcoverage_${i#./}   #parameter expansion
+   egrep -e "function .* called 0" $i  >> $zerocoveragename 
+   while read j ; do 
+      fnname=`echo $j | sed -r 's/function (.*) called 0 .*/\1/'`
+     ./demangle $fnname
+   done < $zerocoveragename
+done < lstcov
+
 
 echo done
