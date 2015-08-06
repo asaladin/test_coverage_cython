@@ -1,14 +1,9 @@
-
+#build the cython library:
 touch bindings/foo.pyx
 python setup.py build
 python setup.py install
-python test.py
-gcov -a -p -b build/temp.linux-x86_64-2.7/src/foo.gcda # -> creates src#foo.cpp.gcov
 
-
-TODO:
- - find untested functions (look for "function .* called 0")
- - demangle function names
- - use env vars to set a prefix directory for gcda files
+#run coverage tests:
+make
 
 
