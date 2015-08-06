@@ -6,7 +6,7 @@ from Cython.Distutils import build_ext
 import os
 import sys
 
-
+os.environ['CPPFLAGS']= "--coverage -O0"
 
 sources =   [
            "foo.cpp",   
