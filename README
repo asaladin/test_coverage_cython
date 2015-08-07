@@ -1,7 +1,5 @@
 #build the cython library:
-touch bindings/foo.pyx
-python setup.py build
-python setup.py install
+make cython
 
 #run coverage tests:
 make
