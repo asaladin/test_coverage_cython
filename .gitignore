@@ -1,0 +1,6 @@
+bindings/*.cpp
+*.o
+build/
+lstcov
+*.zip
+*.tar.gz

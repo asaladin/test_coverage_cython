@@ -1,14 +1,10 @@
 
-all: clean-all cython demangle coverage 
+all: clean-all cython coverage 
 
 cython:
 	touch bindings/foo.pyx
 	python setup.py build
 	python setup.py install
-
-
-demangle: demangle.cpp
-	g++ demangle.cpp -o demangle
 
 coverage:
 	python test.py
@@ -16,7 +12,7 @@ coverage:
 clean:
 	rm -f *.gcov
 	rm -f lst
-	rm -f tmpcoverage_*
+	rm -f uncoveredfuncs_*
 
 clean-cython:
 	rm -rf build
