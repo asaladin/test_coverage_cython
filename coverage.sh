@@ -4,7 +4,7 @@ rm tmpcoverage_*
 
 find . -type f -name "*.gcda" > lst
 for i in `cat lst`; do 
-    gcov -a -p -b $i # -> creates src#foo.cpp.gcov
+    gcov -m -a -p -b $i # -> creates src#foo.cpp.gcov
 done
 
 find . -type f -name "*.gcov" > lstcov
@@ -16,7 +16,7 @@ while read i ; do
    egrep -e "function .* called 0" $i  >> $zerocoveragename 
    while read j ; do 
       fnname=`echo $j | sed -r 's/function (.*) called 0 .*/\1/'`
-     ./demangle $fnname
+#     ./demangle $fnname
    done < $zerocoveragename
 done < lstcov
 
