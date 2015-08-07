@@ -7,3 +7,8 @@ python setup.py install
 make
 
 
+#notes:
+use clang to generate ast tree:
+clang -Xclang -ast-dump -fsyntax-only -I ../headers foo.cpp 
+
+
