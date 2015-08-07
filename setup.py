@@ -6,7 +6,8 @@ from Cython.Distutils import build_ext
 import os
 import sys
 
-os.environ['CPPFLAGS']= "-fno-inline -fprofile-arcs -ftest-coverage --coverage -O0"
+os.environ['CPPFLAGS']= "-fkeep-inline-functions -fno-inline -fno-inline-small-functions -fno-default-inline -fprofile-arcs -ftest-coverage --coverage -O0"
+os.environ['LDFLAGS']= "-fprofile-arcs --coverage"
 
 sources =   [
            "foo.cpp",   
