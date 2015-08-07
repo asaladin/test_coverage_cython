@@ -5,7 +5,8 @@ from libcpp.string cimport string
 cdef extern from "foo.h":
     cdef cppclass CppFoo  "Foo":  
         Foo()
-        int one()        
+        int one()
+        int one_inline()
     
 cdef class Foo:
     cdef CppFoo * thisptr
@@ -16,3 +17,6 @@ cdef class Foo:
            del self.thisptr
     def one(self):
         return self.thisptr.one()
+
+    def one_inline(self):
+        return self.thisptr.one_inline()
