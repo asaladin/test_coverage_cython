@@ -28,4 +28,6 @@ int main(int argc, char ** argv)
      else std::cin >> s;
 
      std::cout << demangle(s) << std::endl;
+
+     return 0;
 }
