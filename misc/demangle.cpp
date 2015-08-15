@@ -7,10 +7,16 @@ std::string demangle(const std::string& in)
 {
   int     status;
   char   *realname;
-
+  std::string out;
   realname = abi::__cxa_demangle(in.c_str(), 0, 0, &status);
- 
-  std::string out(realname);
+
+  if (!realname)
+  {
+    out = std::string("incorrectly_mangled_name:" + in);
+    return out;
+  }
+
+  out = std::string(realname);
   free(realname);
 
   return out;
