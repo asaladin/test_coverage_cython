@@ -8,9 +8,7 @@ install:
   - "cat /etc/debian_version"
   - "ps aux"
   - "ls"
-  - "sh ./install-deps.sh"
   - "pip install cython"
-  - "python setup.py build"
-  - "python setup.py install"
+  - "make"
 # command to run tests
 script: "cd Tests && make testpython"
