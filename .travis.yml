@@ -8,6 +8,10 @@ install:
   - "cat /etc/debian_version"
   - "ps aux"
   - "ls"
+  - "echo deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu precise main >> /etc/apt/sources.list"
+  - "echo deb-src http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu precise main >> /etc/apt/sources.list"
+  - "apt-get update"
+  - "apt-get install gcc-4.7"
   - "pip install cython"
   - "make"
 # command to run tests
