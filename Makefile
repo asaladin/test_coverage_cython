@@ -13,7 +13,7 @@ clean:
 	rm -f *.gcov
 	rm -f lst
 	rm -f uncoveredfuncs_*
-	rm lstcov
+	rm -f lstcov*
 
 clean-cython:
 	rm -rf build
