@@ -6,6 +6,8 @@ install:
   - "dpkg -l"
   - "pwd"
   - "cat /etc/debian_version"
+  - "ps aux"
+  - "ls"
   - "sh ./install-deps.sh"
   - "pip install cython"
   - "python setup.py build"
