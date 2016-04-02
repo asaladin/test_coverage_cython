@@ -7,6 +7,7 @@ cdef extern from "foo.h":
         Foo()
         int one()
         int one_inline()
+        int two_inline()
     
 cdef class Foo:
     cdef CppFoo * thisptr
@@ -20,3 +21,6 @@ cdef class Foo:
 
     def one_inline(self):
         return self.thisptr.one_inline()
+
+    def two_inline(self):
+        return self.thisptr.two_inline()
