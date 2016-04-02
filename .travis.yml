@@ -16,5 +16,4 @@ install:
 # command to run tests
 script: 
   - make
-  - pwd
-  - ls -alR #trying to locate `zerocov_raw.txt`
+
