@@ -1,5 +1,8 @@
 
-all: clean-all cython coverage 
+all: demangle clean-all cython coverage 
+
+demangle: misc/demangle.cpp
+	g++ misc/demangle.cpp -o demangle
 
 cython:
 	touch bindings/foo.pyx
@@ -13,7 +16,8 @@ clean:
 	rm -f *.gcov
 	rm -f lst
 	rm -f uncoveredfuncs_*
-	rm lstcov
+	rm -f lstcov*
+	rm -f demangle
 
 clean-cython:
 	rm -rf build

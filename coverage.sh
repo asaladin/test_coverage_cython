@@ -4,6 +4,7 @@ rm tmpcoverage_*
 rm zerocov_raw.txt
 
 find . -type f -name "*.gcda" > lst
+cat lst
 for i in `cat lst`; do 
     gcov -m -a -p -b $i # -> creates src#foo.cpp.gcov
     find . -type f -name "*.gcov" > lstcov
