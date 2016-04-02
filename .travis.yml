@@ -10,4 +10,7 @@ install:
   - pip install cython
   - make
 # command to run tests
-script: "make"
+script: 
+  - make
+  - pwd
+  - ls -alR #trying to locate `zerocov_raw.txt`
